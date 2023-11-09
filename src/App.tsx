@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Layout, theme} from "antd";
+import {HeaderSection} from "./components/HeaderSection/HeaderSection";
 
 function App() {
+  const { Header, Content, Sider} = Layout;
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Header style={{ display: 'flex', alignItems: 'center' }}>
+          <HeaderSection />
+        </Header>
+        <Content style={{ padding: '0 50px' }}>
+          <Layout style={{ padding: '24px 0', background: colorBgContainer }}>
+            <Sider style={{ background: colorBgContainer }} width={200}>
+            </Sider>
+            <Content style={{ padding: '0 24px', minHeight: 280 }}>Content</Content>
+          </Layout>
+        </Content>
+      </Layout>
     </div>
   );
 }
