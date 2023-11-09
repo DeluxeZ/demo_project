@@ -3,7 +3,7 @@ import styles from './index.module.less';
 
 export const HeaderSection = () => {
     return (
-        <div>
+        <div className={styles.headerContainer}>
             <div>
                 <PicLeftOutlined />
                 logo
