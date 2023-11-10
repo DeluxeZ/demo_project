@@ -566,8 +566,8 @@ module.exports = function (webpackEnv) {
               // See https://github.com/webpack/webpack/issues/6571
               sideEffects: true,
             },
-            // Adds support for CSS Modules, but using LASS
-            // using the extension .module.scss or .module.sass
+            // Adds support for LESS Modules, but using LESS
+            // using the extension .module.less
             {
               test: lessModuleRegex,
               use: getStyleLoaders(

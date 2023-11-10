@@ -2,23 +2,22 @@ import React from 'react';
 import './App.css';
 import {Layout} from "antd";
 import {HeaderSection} from "./components/HeaderSection/HeaderSection";
+import {ContentSection} from "./components/ContentSection/ContentSection";
+import {OperatorProvider} from "./providers/OperatorProvider";
+import {Operator} from "./components/Operator/Operator";
 
 function App() {
-  const { Header, Content, Sider} = Layout;
   return (
     <div className="App">
-      <Layout>
-        <Header style={{ display: 'flex', alignItems: 'center' }}>
-          <HeaderSection />
-        </Header>
-        <Content style={{ padding: '0 50px' }}>
-          <Layout style={{ padding: '24px 0' }}>
-            <Sider width={200}>
-            </Sider>
-            <Content style={{ padding: '0 24px', minHeight: '100%' }}>Content</Content>
+      <OperatorProvider>
+        <>
+          <Layout style={{ height: '100%' }}>
+            <HeaderSection />
+            <ContentSection />
           </Layout>
-        </Content>
-      </Layout>
+          <Operator />
+        </>
+      </OperatorProvider>
     </div>
   );
 }
